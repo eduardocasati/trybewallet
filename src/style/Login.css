@@ -3,39 +3,38 @@
   width: 100%;
 }
 
-.login__inputs {
+.login__inputs , .login__inputs button , .login-btn__arrow {
   align-items: center;
   display: flex;
-  gap: 40px;
-  justify-content: center;
 }
 
-.login__inputs input {
-  width: 140px;
+.login__inputs {
+  gap: 40px;
+  margin-right: auto;
+  padding-top: 32px;
+}
+
+.login__inputs input , .login__inputs button {
+  width: 180px;
 }
 
 .login__inputs button {
-  background-color: transparent;
-  color: #597265;
-  font-weight: 300;
+  filter: drop-shadow(0 21px 20px rgba(20, 163, 91, 0.4));
+  gap: 32px;
+  justify-content: space-between;
+  padding-right: 4.5rem;
   position: relative;
 }
 
-.login__inputs button:after {
-  content: '';
-  height: 0;
+.login-btn__arrow {
+  background-color: #0f7641;
+  border-radius: 5px;
+  height: 36px;
+  justify-content: center;
+  margin-right: 8px;
   position: absolute;
-  transition: width 200ms ease-in-out;
-  width: 0;
-}
-
-
-.login__inputs button:hover:after {
-  border-bottom: 2px solid #597265;
-  bottom: 0;
-  content: '';
-  left: 1%;
-  width: 100%;
+  right: 0;
+  width: 36px;
 }
 
 .hero {
@@ -68,9 +67,22 @@
   background-clip: text;
   background-image: linear-gradient(90deg, #229155 0%, #2a6a4b 100%);
   color: transparent;
+  position: relative;
+}
+
+.hero__image img {
+  width: fit-content;
+}
+
+.hero h1 span img {
+  bottom: 5%;
+  left: -1%;
+  position: absolute;
+  width: 100%;
 }
 
 .hero p {
+  color: #3a4840;
   padding-top: 32px;
 }
 
@@ -79,14 +91,57 @@
   width: 50%;
 }
 
-.hero__image img {
-  width: fit-content;
-}
-
 @media only screen and ( max-width : 1200px ) {
 
   .hero {
     padding: 0 32px;
+  }
+
+}
+
+@media only screen and ( max-width : 1000px ) {
+
+  .hero__image img {
+    width: 500px;
+  }
+
+}
+
+@media only screen and ( max-width : 600px ) {
+
+  .hero__image {
+    display: none;
+  }
+
+  .hero__title {
+    width: 100%;
+  }
+
+  .hero__title h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .hero__title p {
+    text-align: center;
+  }
+
+}
+
+@media only screen and ( max-width : 400px ) {
+
+  .hero__title h1 {
+    font-size: 2.6rem;
+  }
+
+  .login__inputs {
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+  }
+
+  .login__inputs input , .login__inputs button {
+    width: 220px;
   }
 
 }

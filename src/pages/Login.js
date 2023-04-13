@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { MdLogin } from 'react-icons/md';
 import { connect } from 'react-redux';
 
 import '../style/Login.css';
 
 import heroImage from '../assets/hero-image.png';
 import logo from '../assets/logo.png';
+import tracedUnderline from '../assets/traced-underline.png';
 import { saveUser } from '../redux/actions';
 
 class Login extends React.Component {
@@ -59,6 +61,22 @@ class Login extends React.Component {
                 trybewallet
               </span>
             </div>
+          </div>
+        </div>
+        <div className="hero">
+          <div className="hero__title">
+            <h1>
+              <span>
+                Controle
+                <img src={ tracedUnderline } alt="Traced underline" />
+              </span>
+              {' '}
+              total das finanças na palma da sua mão
+            </h1>
+            <p>
+              Organize seu dinheiro em tempo real em uma solução completa,
+              prática e segura, e garanta o controle total das suas finanças.
+            </p>
             <div className="login__inputs">
               <input
                 value={ emailInput }
@@ -84,21 +102,12 @@ class Login extends React.Component {
                 disabled={ validInfo }
               >
                 Entrar
+                {' '}
+                <div className="login-btn__arrow">
+                  <MdLogin size={ 20 } />
+                </div>
               </button>
             </div>
-          </div>
-        </div>
-        <div className="hero">
-          <div className="hero__title">
-            <h1>
-              <span>Controle</span>
-              {' '}
-              total das finanças na palma da sua mão
-            </h1>
-            <p>
-              Organize seu dinheiro em tempo real em uma solução completa,
-              prática e segura, e garanta o controle total das suas finanças.
-            </p>
           </div>
           <div className="hero__image">
             <img src={ heroImage } alt="Hero" />
