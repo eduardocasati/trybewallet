@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 import '../style/Login.css';
 
-import logo from '../assets/logo.svg';
+import heroImage from '../assets/hero-image.png';
+import logo from '../assets/logo.png';
 import { saveUser } from '../redux/actions';
 
 class Login extends React.Component {
@@ -49,41 +50,60 @@ class Login extends React.Component {
   render() {
     const { emailInput, pwdInput, validInfo } = this.state;
     return (
-      <div className="login-box">
-        <div className="login-box__logo">
-          <img src={ logo } alt="Money with wings" />
-          <h1>
-            Trybe
-            <span>Wallet</span>
-          </h1>
+      <div className="login">
+        <div className="header">
+          <div className="header__container">
+            <div className="logo">
+              <img src={ logo } alt="Money with wings" />
+              <span>
+                trybewallet
+              </span>
+            </div>
+            <div className="login__inputs">
+              <input
+                value={ emailInput }
+                onChange={ this.handleChange }
+                type="email"
+                name="emailInput"
+                id="emailInput"
+                placeholder="Email"
+                data-testid="email-input"
+              />
+              <input
+                value={ pwdInput }
+                onChange={ this.handleChange }
+                type="password"
+                name="pwdInput"
+                id="pwdInput"
+                placeholder="Senha"
+                data-testid="password-input"
+              />
+              <button
+                onClick={ () => this.handleLogin(emailInput) }
+                type="button"
+                disabled={ validInfo }
+              >
+                Entrar
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="login-box__inputs">
-          <input
-            value={ emailInput }
-            onChange={ this.handleChange }
-            type="email"
-            name="emailInput"
-            id="emailInput"
-            placeholder="Email"
-            data-testid="email-input"
-          />
-          <input
-            value={ pwdInput }
-            onChange={ this.handleChange }
-            type="password"
-            name="pwdInput"
-            id="pwdInput"
-            placeholder="Senha"
-            data-testid="password-input"
-          />
+        <div className="hero">
+          <div className="hero__title">
+            <h1>
+              <span>Controle</span>
+              {' '}
+              total das finanças na palma da sua mão
+            </h1>
+            <p>
+              Organize seu dinheiro em tempo real em uma solução completa,
+              prática e segura, e garanta o controle total das suas finanças.
+            </p>
+          </div>
+          <div className="hero__image">
+            <img src={ heroImage } alt="Hero" />
+          </div>
         </div>
-        <button
-          onClick={ () => this.handleLogin(emailInput) }
-          type="button"
-          disabled={ validInfo }
-        >
-          Entrar
-        </button>
       </div>
     );
   }

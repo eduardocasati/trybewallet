@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import '../style/Header.css';
 
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 class Header extends Component {
   render() {
@@ -12,9 +12,9 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="header__container">
-          <div className="header__logo">
+          <div className="logo">
             <img src={ logo } alt="Money with wings" />
-            <h1>Trybewallet</h1>
+            <span>trybewallet</span>
           </div>
           <div className="header__info">
             <span className="header__user" data-testid="email-field">

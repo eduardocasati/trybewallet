@@ -1,76 +1,92 @@
-.login-box {
+.login {
+  height: 100dvh;
+  width: 100%;
+}
+
+.login__inputs {
   align-items: center;
   display: flex;
-  flex-direction: column;
-  gap: 48px;
+  gap: 40px;
   justify-content: center;
-  left: 50%;
-  padding: 32px;
+}
+
+.login__inputs input {
+  width: 140px;
+}
+
+.login__inputs button {
+  background-color: transparent;
+  color: #597265;
+  font-weight: 300;
+  position: relative;
+}
+
+.login__inputs button:after {
+  content: '';
+  height: 0;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  transition: width 200ms ease-in-out;
+  width: 0;
 }
 
-.login-box__logo {
-  font-size: 2rem;
-  margin-bottom: 16px;
+
+.login__inputs button:hover:after {
+  border-bottom: 2px solid #597265;
+  bottom: 0;
+  content: '';
+  left: 1%;
+  width: 100%;
 }
 
-.login-box__logo img {
-  margin-right: 8px;
-  transform: translateY(4px);
-  width: 68px;
-}
-
-.login-box__logo h1 {
-  background-clip: text;
-  background-image: linear-gradient(90deg, #3ec0cd 0%, #8bf377 100%);
-  color: transparent;
-  display: inline;
-}
-
-.login-box__inputs {
+.hero {
   display: flex;
+  height: calc(100dvh - 10rem);
+  margin: 0 auto;
+  max-width: 1224px;
+}
+
+.hero__title , .hero__image {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__title {
   flex-direction: column;
-  gap: 8px;
+  width: 50%;
 }
 
-.login-box input , .login-box button {
-  border-radius: 5px;
-  font-size: 16px;
-  height: 40px;
-  width: 300px;
+.hero h1 {
+  color: #084023;
+  font-size: 3.75rem;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  text-align: left;
 }
 
-.login-box input {
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  padding: 0 8px;
+.hero h1 span {
+  background-clip: text;
+  background-image: linear-gradient(90deg, #229155 0%, #2a6a4b 100%);
+  color: transparent;
 }
 
-.login-box input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
+.hero p {
+  padding-top: 32px;
 }
 
-.login-box input:focus {
-  outline: none;
+.hero__image {
+  padding-left: 3rem;
+  width: 50%;
 }
 
-.login-box button {
-  background-color: #50e536;
-  border: none;
-  color: rgba(0, 0, 0, 0.9);
-  cursor: pointer;
-  font-weight: 700;
-  transition: background-color 250ms ease-in-out;
+.hero__image img {
+  width: fit-content;
 }
 
-.login-box button:disabled {
-  background-color: #ceecc6;
-  color: rgba(0, 0, 0, 0.5);
-  opacity: 35%;
-  pointer-events: none;
-}
+@media only screen and ( max-width : 1200px ) {
 
-.login-box button:hover {
-  background-color: #2fcb17;
+  .hero {
+    padding: 0 32px;
+  }
+
 }

@@ -1,0 +1,26 @@
+.wallet-form {
+  align-items: center;
+  background-color: #171930;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  padding: 32px 0;
+  width: 100%;
+}
+
+.wallet-form span {
+  margin-inline: 16px;
+}
+
+.wallet-form input , .wallet-form select {
+  height: 30px;
+}
+
+.wallet-form input {
+  width: 180px;
+}
+
+.wallet-form button {
+  height: 30px;
+  padding-inline: 7px;
+}
