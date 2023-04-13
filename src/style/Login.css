@@ -1,0 +1,76 @@
+.login-box {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  justify-content: center;
+  left: 50%;
+  padding: 32px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-box__logo {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.login-box__logo img {
+  margin-right: 8px;
+  transform: translateY(4px);
+  width: 68px;
+}
+
+.login-box__logo h1 {
+  background-clip: text;
+  background-image: linear-gradient(90deg, #3ec0cd 0%, #8bf377 100%);
+  color: transparent;
+  display: inline;
+}
+
+.login-box__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-box input , .login-box button {
+  border-radius: 5px;
+  font-size: 16px;
+  height: 40px;
+  width: 300px;
+}
+
+.login-box input {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0 8px;
+}
+
+.login-box input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.login-box input:focus {
+  outline: none;
+}
+
+.login-box button {
+  background-color: #50e536;
+  border: none;
+  color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 250ms ease-in-out;
+}
+
+.login-box button:disabled {
+  background-color: #ceecc6;
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 35%;
+  pointer-events: none;
+}
+
+.login-box button:hover {
+  background-color: #2fcb17;
+}
