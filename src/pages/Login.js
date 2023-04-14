@@ -53,11 +53,11 @@ class Login extends React.Component {
     const { emailInput, pwdInput, validInfo } = this.state;
     return (
       <div className="login">
-        <div className="header">
+        <div className="header header--transparent">
           <div className="header__container">
             <div className="logo">
-              <img src={ logo } alt="Money with wings" />
-              <span>
+              <img src={ logo } alt="Money with wings" className="header--transparent" />
+              <span className="header--transparent">
                 trybewallet
               </span>
             </div>

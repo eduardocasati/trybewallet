@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { HiOutlineUser } from 'react-icons/hi';
 import { connect } from 'react-redux';
 
 import '../style/Header.css';
@@ -16,23 +17,27 @@ class Header extends Component {
             <img src={ logo } alt="Money with wings" />
             <span>trybewallet</span>
           </div>
-          <div className="header__info">
-            <span className="header__user" data-testid="email-field">
-              { email }
+          <span className="header__expenses">
+            Total de Despesas:
+            {' '}
+            <span className="header__total" data-testid="total-field">
+              0
             </span>
             <span>
-              Total de Despesas:
-              {' '}
-              <span className="header__total" data-testid="total-field">
-                0
-              </span>
-              {' '}
               <span
                 className="header__total"
                 data-testid="header-currency-field"
               >
+                {' '}
                 BRL
               </span>
+            </span>
+          </span>
+          <div className="header__info">
+            <span className="header__user" data-testid="email-field">
+              <HiOutlineUser size={ 18 } />
+              {' '}
+              { email }
             </span>
           </div>
         </div>

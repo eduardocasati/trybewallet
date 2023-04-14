@@ -18,10 +18,17 @@ body {
   color: #597265;
 }
 
-input {
-  padding-left: 16px;
+input, button, select {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+input, select {
   border: 1px solid rgba(89, 114, 101, 0.5);
   border-radius: 0.5rem;
+}
+
+input {
+  padding-left: 16px;
   color: #597265;
   padding-block: 0.65rem
 }
@@ -36,7 +43,6 @@ input:focus {
 }
 
 input , button {
-  font-family: 'Noto Sans', sans-serif;
   line-height: 1.5rem;
   letter-spacing: -.01em;
   font-size: 1rem;
@@ -55,4 +61,8 @@ button {
 
 button:hover {
 background-color: #0F7641;
+}
+
+select {
+  background-color: white;
 }

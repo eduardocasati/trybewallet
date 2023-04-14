@@ -1,3 +1,24 @@
+.header--transparent {
+  background-color: transparent ! important;
+  color: #0a522d ! important;
+  font-size: 1.8rem ! important;
+  height: 7rem ! important;
+}
+
+.header--transparent img {
+  filter: none ! important;
+  height: auto ! important;
+  transform: translateY(-7px);
+  width: 72px ! important;
+}
+
+.logo span {
+  align-items: center;
+  color: white;
+  display: flex;
+  height: 100%;
+}
+
 .login {
   height: 100dvh;
   width: 100%;
@@ -22,7 +43,6 @@
   filter: drop-shadow(0 21px 20px rgba(20, 163, 91, 0.4));
   gap: 32px;
   justify-content: space-between;
-  padding-right: 4.5rem;
   position: relative;
 }
 

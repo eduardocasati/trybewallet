@@ -1,0 +1,56 @@
+.wallet {
+  background-color: whitesmoke;
+  height: 100dvh;
+  width: 100%;
+}
+
+.wallet-form__box {
+  align-items: stretch;
+
+  /* background-color: white; */
+
+  /* border-radius: 8px; */
+  color: #555;
+  display: flex;
+  gap: 32px;
+  height: max-content;
+  justify-content: space-between;
+  margin: 32px auto;
+  max-width: 1224px;
+
+  /* padding: 32px; */
+  width: 100%;
+}
+
+.total-expenses {
+  align-self: stretch;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 210px;
+  justify-content: center;
+
+  /* margin-left: auto; */
+  padding: 40px;
+  position: relative;
+  text-align: center;
+  top: 0;
+}
+
+.total-expenses h2 {
+  color: #4d4d4d;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.total-expenses span {
+  /* color: #ff6c6c; */
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.total-expenses span span {
+  color: #787878;
+}
