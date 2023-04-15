@@ -9,7 +9,8 @@
 }
 
 .table table {
-  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px;
   overflow-x: scroll;
   width: 100%;
 }
@@ -36,6 +37,10 @@
   word-wrap: break-word;
 }
 
+.table table tbody {
+  width: 100%;
+}
+
 .table table tbody tr:nth-child( even ) {
   background-color: #f3f3f3;
 }
@@ -53,13 +58,6 @@
   text-align: center;
   width: 116px;
   word-wrap: break-word;
-}
-
-.table__footer {
-  border-bottom: 5px solid #14a35b;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  height: 5px;
 }
 
 .table__buttons {
@@ -82,4 +80,12 @@
 .table__button-delete:hover {
   color: #ec3838;
   transition: 150ms ease-in-out;
+}
+
+.table__footer {
+  border-bottom: 5px solid #14a35b;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 5px;
+  width: 100%;
 }

@@ -31,7 +31,7 @@ class Wallet extends React.Component {
                 }
               >
                 {' '}
-                {totalExpenses}
+                {Number(totalExpenses).toFixed(2)}
               </span>
               <span>BRL</span>
             </span>
