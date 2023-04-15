@@ -6,10 +6,6 @@
 
 .wallet-form__box {
   align-items: stretch;
-
-  /* background-color: white; */
-
-  /* border-radius: 8px; */
   color: #555;
   display: flex;
   gap: 32px;
@@ -17,8 +13,6 @@
   justify-content: space-between;
   margin: 32px auto;
   max-width: 1224px;
-
-  /* padding: 32px; */
   width: 100%;
 }
 
@@ -31,8 +25,6 @@
   flex-grow: 1;
   height: 210px;
   justify-content: center;
-
-  /* margin-left: auto; */
   padding: 40px;
   position: relative;
   text-align: center;

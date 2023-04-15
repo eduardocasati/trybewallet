@@ -7,6 +7,7 @@ import '../style/Wallet.css';
 import expensesIcon from '../assets/expenses-icon-full.png';
 
 import Header from '../components/Header';
+import Table from '../components/Table';
 import WalletForm from '../components/WalletForm';
 
 class Wallet extends React.Component {
@@ -30,14 +31,13 @@ class Wallet extends React.Component {
                 }
               >
                 {' '}
-                {
-                  totalExpenses
-                }
+                {totalExpenses}
               </span>
               <span>BRL</span>
             </span>
           </div>
         </div>
+        <Table />
       </div>
     );
   }

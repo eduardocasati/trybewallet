@@ -94,7 +94,7 @@ class WalletForm extends Component {
             />
           </label>
           <label htmlFor="tag">
-            <span>Categoria</span>
+            <span>Tag</span>
             <select
               value={ tag }
               onChange={ this.handleChange }

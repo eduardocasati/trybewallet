@@ -1,0 +1,85 @@
+.table {
+  background-color: white;
+  border-radius: 8px;
+  color: #3a4840;
+  margin: 32px auto;
+  max-width: 1224px;
+  padding: 40px;
+  width: 100%;
+}
+
+.table table {
+  margin: 0 auto;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.table__header {
+  background-color: #14a35b;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #d0f6e2;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.table__header th {
+  align-items: center;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 400;
+  justify-content: center;
+  width: 116px;
+  word-wrap: break-word;
+}
+
+.table table tbody tr:nth-child( even ) {
+  background-color: #f3f3f3;
+}
+
+.table__expense-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  width: 100%;
+}
+
+.table__expense-row td {
+  font-size: 0.8rem;
+  text-align: center;
+  width: 116px;
+  word-wrap: break-word;
+}
+
+.table__footer {
+  border-bottom: 5px solid #14a35b;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 5px;
+}
+
+.table__buttons {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.table__button {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.table__button-edit:hover {
+  color: #57d3ff;
+  transition: 150ms ease-in-out;
+}
+
+.table__button-delete:hover {
+  color: #ec3838;
+  transition: 150ms ease-in-out;
+}
