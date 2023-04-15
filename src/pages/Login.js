@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { MdLogin } from 'react-icons/md';
+// import { MdLogin } from 'react-icons/md';
 import { connect } from 'react-redux';
 
 import '../style/Login.css';
 
 import heroImage from '../assets/hero-image.png';
 import logo from '../assets/logo.png';
-import tracedUnderline from '../assets/traced-underline.png';
+// import tracedUnderline from '../assets/traced-underline.png';
 import { saveUser } from '../redux/actions';
 
 class Login extends React.Component {
@@ -68,7 +68,7 @@ class Login extends React.Component {
             <h1>
               <span>
                 Controle
-                <img src={ tracedUnderline } alt="Traced underline" />
+                {/* <img src={ tracedUnderline } alt="Traced underline" /> */}
               </span>
               {' '}
               total das finanças na palma da sua mão
@@ -103,9 +103,9 @@ class Login extends React.Component {
               >
                 Entrar
                 {' '}
-                <div className="login-btn__arrow">
+                {/* <div className="login-btn__arrow">
                   <MdLogin size={ 20 } />
-                </div>
+                </div> */}
               </button>
             </div>
           </div>

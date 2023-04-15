@@ -9,7 +9,7 @@ import logo from '../assets/logo.png';
 
 class Header extends Component {
   render() {
-    const { email } = this.props;
+    const { email, totalExpenses } = this.props;
     return (
       <div className="header">
         <div className="header__container">
@@ -18,10 +18,12 @@ class Header extends Component {
             <span>trybewallet</span>
           </div>
           <span className="header__expenses">
-            Total de Despesas:
-            {' '}
+            {/* Total de Despesas:
+            {' '} */}
             <span className="header__total" data-testid="total-field">
-              0
+              {
+                totalExpenses.toFixed(2)
+              }
             </span>
             <span>
               <span
@@ -48,10 +50,12 @@ class Header extends Component {
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
+  totalExpenses: state.totalExpenses.totalExpenses,
 });
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
+  totalExpenses: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps)(Header);

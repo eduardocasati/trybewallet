@@ -59,6 +59,7 @@
 .wallet-form__button {
   align-items: flex-end;
   display: flex;
+  flex-grow: 1;
 }
 
 .wallet-form button {
@@ -70,9 +71,9 @@
   font-size: 14px;
   height: 36px;
   justify-content: center;
-  max-width: 210px;
   padding: 7px 16px;
   transition: all linear 150ms;
+  width: 100%;
 }
 
 .wallet-form button:hover {
