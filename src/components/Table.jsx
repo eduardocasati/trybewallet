@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FaRegEdit, FaTrash } from 'react-icons/fa';
 import { connect } from 'react-redux';
+import { deleteExpense, subtractTotalExpenses } from '../redux/actions';
 
 import '../style/Table.css';
 
@@ -18,6 +19,12 @@ const tableHeaderColumns = [
 ];
 
 class Table extends Component {
+  handleDeleteExpense = (expenseId, expenseValue) => {
+    const { dispatch } = this.props;
+    dispatch(deleteExpense(expenseId));
+    dispatch(subtractTotalExpenses(Number(expenseValue).toFixed(2)));
+  };
+
   render() {
     const { expenses } = this.props;
     return (
@@ -42,8 +49,9 @@ class Table extends Component {
                   <td>{Number(expense.value).toFixed(2)}</td>
                   <td>{expense.exchangeRates[expense.currency].name}</td>
                   <td>
-                    {Number(expense.exchangeRates[expense.currency].ask)
-                      .toFixed(2)}
+                    {Number(
+                      expense.exchangeRates[expense.currency].ask,
+                    ).toFixed(2)}
                   </td>
                   <td>
                     {(
@@ -54,8 +62,23 @@ class Table extends Component {
                   <td>Real</td>
                   <td>
                     <div className="table__buttons">
-                      <FaRegEdit className="table__button table__button-edit" />
-                      <FaTrash className="table__button table__button-delete" />
+                      <button className="table__button table__button-edit" type="button">
+                        <FaRegEdit />
+                      </button>
+                      <button
+                        onClick={ () => this.handleDeleteExpense(
+                          expense.id,
+                          Number(expense.value)
+                              * Number(
+                                expense.exchangeRates[expense.currency].ask,
+                              ),
+                        ) }
+                        className="table__button table__button-delete"
+                        type="button"
+                        data-testid="delete-btn"
+                      >
+                        <FaTrash />
+                      </button>
                     </div>
                   </td>
                 </tr>
@@ -101,6 +124,7 @@ Table.propTypes = {
       }).isRequired,
     }).isRequired,
   ).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(Table);

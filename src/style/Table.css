@@ -72,6 +72,10 @@
   font-size: 1rem;
 }
 
+.table__button-edit {
+  font-size: 1.2rem;
+}
+
 .table__button-edit:hover {
   color: #57d3ff;
   transition: 150ms ease-in-out;
@@ -88,4 +92,14 @@
   border-bottom-right-radius: 5px;
   height: 5px;
   width: 100%;
+}
+
+.table__buttons button {
+  background-color: transparent;
+  color: #3a4840;
+  padding: 0;
+}
+
+.table__buttons button:hover {
+  background-color: transparent;
 }
