@@ -2,7 +2,12 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FaRegEdit, FaTrash } from 'react-icons/fa';
 import { connect } from 'react-redux';
-import { deleteExpense, subtractTotalExpenses } from '../redux/actions';
+import {
+  deleteExpense,
+  setIdToEdit,
+  sumTotalExpenses,
+  toggleEditExpense,
+} from '../redux/actions';
 
 import '../style/Table.css';
 
@@ -19,10 +24,16 @@ const tableHeaderColumns = [
 ];
 
 class Table extends Component {
-  handleDeleteExpense = (expenseId, expenseValue) => {
+  handleDeleteExpense = (expenseId) => {
     const { dispatch } = this.props;
     dispatch(deleteExpense(expenseId));
-    dispatch(subtractTotalExpenses(Number(expenseValue).toFixed(2)));
+    dispatch(sumTotalExpenses());
+  };
+
+  toggleEditingExpense = (isEditing, idToEdit) => {
+    const { dispatch } = this.props;
+    dispatch(toggleEditExpense(isEditing));
+    dispatch(setIdToEdit(idToEdit));
   };
 
   render() {
@@ -62,16 +73,17 @@ class Table extends Component {
                   <td>Real</td>
                   <td>
                     <div className="table__buttons">
-                      <button className="table__button table__button-edit" type="button">
+                      <button
+                        onClick={ () => this.toggleEditingExpense(true, expense.id) }
+                        className="table__button table__button-edit"
+                        type="button"
+                        data-testid="edit-btn"
+                      >
                         <FaRegEdit />
                       </button>
                       <button
                         onClick={ () => this.handleDeleteExpense(
                           expense.id,
-                          Number(expense.value)
-                              * Number(
-                                expense.exchangeRates[expense.currency].ask,
-                              ),
                         ) }
                         className="table__button table__button-delete"
                         type="button"
@@ -100,29 +112,7 @@ const mapStateToProps = (state) => ({
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      value: PropTypes.string.isRequired,
-      currency: PropTypes.string.isRequired,
-      method: PropTypes.string.isRequired,
-      tag: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      exchangeRates: PropTypes.shape({
-        USD: PropTypes.shape({
-          code: PropTypes.string.isRequired,
-          codein: PropTypes.string.isRequired,
-          name: PropTypes.string.isRequired,
-          high: PropTypes.string.isRequired,
-          low: PropTypes.string.isRequired,
-          varBid: PropTypes.string.isRequired,
-          pctChange: PropTypes.string.isRequired,
-          bid: PropTypes.string.isRequired,
-          ask: PropTypes.string.isRequired,
-          timestamp: PropTypes.string.isRequired,
-          create_date: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
+    PropTypes.shape({ }).isRequired,
   ).isRequired,
   dispatch: PropTypes.func.isRequired,
 };

@@ -1,7 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrencyList, saveExpense, sumTotalExpenses } from '../redux/actions';
+import {
+  editExpense,
+  fetchCurrencyList,
+  saveExpense,
+  sumTotalExpenses,
+  toggleEditExpense,
+} from '../redux/actions';
 import { requestCurrencyAPI } from '../services';
 
 import '../style/WalletForm.css';
@@ -34,14 +40,32 @@ class WalletForm extends Component {
   };
 
   fetchCurrencyAPI = async () => {
+    const { isEditing } = this.props;
     const data = await requestCurrencyAPI();
+    if (isEditing) {
+      return this.handleClick();
+    }
     this.setState({
       exchangeRates: data,
-    }, () => this.handleSaveExpense());
+    }, () => this.handleClick());
+  };
+
+  handleClick = async () => {
+    this.setState({
+      description: '',
+      value: '',
+    });
+    this.handleSaveExpense();
   };
 
   handleSaveExpense = () => {
-    const { dispatch, expensesCounter } = this.props;
+    const {
+      dispatch,
+      expensesCounter,
+      isEditing,
+      expenseIdToEdit,
+      expenses,
+    } = this.props;
     const {
       description,
       tag,
@@ -50,26 +74,43 @@ class WalletForm extends Component {
       method,
       exchangeRates,
     } = this.state;
-    dispatch(saveExpense({
-      id: expensesCounter.length,
-      // value: (Number((Number(value) * Number(exchangeRates[currency].ask))).toFixed(2)),
-      value,
-      currency,
-      method,
-      tag,
-      description,
-      exchangeRates,
-    }));
-    dispatch(sumTotalExpenses(Number((Number(value)
-      * Number(exchangeRates[currency].ask)).toFixed(2))));
-    this.setState({
-      description: '',
-      value: '',
-    });
+    if (isEditing) {
+      dispatch(editExpense({
+        id: expenseIdToEdit,
+        value,
+        currency,
+        method,
+        tag,
+        description,
+        exchangeRates,
+      }));
+      dispatch(toggleEditExpense(false));
+      dispatch(sumTotalExpenses((expenses.reduce(
+        (acc, expense) => acc
+        + Number(expense.value) * Number(expense.exchangeRates[expense.currency].ask),
+        0,
+      ))));
+    }
+    if (!isEditing) {
+      dispatch(saveExpense({
+        id: expensesCounter.length,
+        value,
+        currency,
+        method,
+        tag,
+        description,
+        exchangeRates,
+      }));
+      dispatch(sumTotalExpenses((expenses.reduce(
+        (acc, expense) => acc
+        + Number(expense.value) * Number(expense.exchangeRates[expense.currency].ask),
+        0,
+      ))));
+    }
   };
 
   render() {
-    const { currencies } = this.props;
+    const { currencies, isEditing } = this.props;
     const {
       description,
       tag,
@@ -79,7 +120,11 @@ class WalletForm extends Component {
     } = this.state;
 
     return (
-      <div className="wallet-form">
+      <div
+        className={
+          isEditing ? 'wallet-form wallet-form--is-editing' : 'wallet-form'
+        }
+      >
         <div className="wallet-form__container">
           <label htmlFor="description">
             <span>Descrição</span>
@@ -169,7 +214,9 @@ class WalletForm extends Component {
               type="button"
               onClick={ () => this.fetchCurrencyAPI() }
             >
-              Adicionar despesa
+              {
+                isEditing ? 'Editar despesa' : 'Adicionar despesa'
+              }
             </button>
           </div>
         </div>
@@ -181,13 +228,18 @@ class WalletForm extends Component {
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
   expensesCounter: state.wallet.expenses,
-
+  isEditing: state.wallet.editor,
+  expenseIdToEdit: state.wallet.idToEdit,
+  expenses: state.wallet.expenses,
 });
 
 WalletForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
   currencies: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   expensesCounter: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
+  isEditing: PropTypes.bool.isRequired,
+  expenseIdToEdit: PropTypes.number.isRequired,
+  expenses: PropTypes.arrayOf({ }).isRequired,
 };
 
 export default connect(mapStateToProps)(WalletForm);

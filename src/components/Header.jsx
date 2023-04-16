@@ -18,11 +18,11 @@ class Header extends Component {
             <span>trybewallet</span>
           </div>
           <span className="header__expenses">
-            {/* Total de Despesas:
-            {' '} */}
+            Total de Despesas:
+            {' '}
             <span className="header__total" data-testid="total-field">
               {
-                totalExpenses.toFixed(2)
+                Number(totalExpenses).toFixed(2)
               }
             </span>
             <span>
@@ -50,7 +50,7 @@ class Header extends Component {
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
-  totalExpenses: state.totalExpenses.totalExpenses,
+  totalExpenses: state.wallet.totalExpenses,
 });
 
 Header.propTypes = {

@@ -1,4 +1,4 @@
-.header--transparent {
+/* .header--transparent {
   background-color: transparent ! important;
   color: #0a522d ! important;
   font-size: 1.8rem ! important;
@@ -10,7 +10,7 @@
   height: auto ! important;
   transform: translateY(-7px);
   width: 72px ! important;
-}
+} */
 
 .logo span {
   align-items: center;
@@ -44,6 +44,12 @@
   gap: 32px;
   justify-content: space-between;
   position: relative;
+}
+
+.login__inputs button:disabled {
+  background-color: rgba(89, 114, 101, 0.5);
+  filter: none;
+  pointer-events: none;
 }
 
 .login-btn__arrow {

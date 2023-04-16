@@ -20,14 +20,15 @@ class Wallet extends React.Component {
           <WalletForm />
           <div className="total-expenses">
             <h2>
-              <img src={ expensesIcon } alt="Expenses icon" />
-              {' '}
               Total de Despesas
+              {' '}
+              <img src={ expensesIcon } alt="Expenses icon" />
             </h2>
             <span>
               <span
                 className={
-                  totalExpenses === 0 ? undefined : 'total-expenses--red'
+                  totalExpenses === 0
+                    ? undefined : 'total-expenses--red'
                 }
               >
                 {' '}
@@ -44,7 +45,7 @@ class Wallet extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  totalExpenses: state.totalExpenses.totalExpenses,
+  totalExpenses: state.wallet.totalExpenses,
 });
 
 Wallet.propTypes = {

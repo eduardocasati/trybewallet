@@ -36,7 +36,7 @@
   color: #05346a;
   display: flex;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   gap: 8px;
   justify-content: center;
 }
@@ -59,6 +59,6 @@
   padding-right: 16px;
 }
 
-.total-expenses--red {
+/* .total-expenses--red {
   color: #ff6c6c ! important;
-}
+} */
