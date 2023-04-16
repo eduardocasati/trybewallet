@@ -30,7 +30,8 @@ export const walletReducer = (state = INITIAL_STATE, action) => {
   }
   case EXPENSE_TO_BE_DELETED: {
     return { ...state,
-      expenses: state.expenses.filter((expense) => expense.id !== action.payload),
+      expenses: state.expenses
+        .filter((expense) => expense.id !== action.payload),
     };
   }
   case IS_EDITING_EXPENSE: {

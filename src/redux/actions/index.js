@@ -31,7 +31,6 @@ export const saveExpense = (expense) => ({
 
 export const sumTotalExpenses = () => ({
   type: TOTAL_EXPENSES,
-  // payload: totalExpenses,
 });
 
 export const deleteExpense = (expenseId) => ({

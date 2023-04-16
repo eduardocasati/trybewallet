@@ -135,6 +135,7 @@ class WalletForm extends Component {
               name="description"
               id="description"
               className="wallet-form--description"
+              placeholder={ isEditing && 'Editar descrição' }
               data-testid="description-input"
             />
           </label>
@@ -168,6 +169,7 @@ class WalletForm extends Component {
               name="value"
               id="value"
               className="wallet-form--value"
+              placeholder={ isEditing && 'Editar valor' }
               data-testid="value-input"
             />
           </label>
