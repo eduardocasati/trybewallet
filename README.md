@@ -16,7 +16,7 @@ Este projeto foi desenvolvido para o estudo e a avaliação dos seguintes conhec
 - Ciclos de vida de componentes React;
 - Manipulação do Estado de componentes React;
 - Renderização condicional;
-- Requisição e consumo de dados vindos de uma API ([iTunes](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html));
+- Requisição e consumo de dados vindos de uma API ([API de Cotações](https://docs.awesomeapi.com.br/api-de-moedas));
 
 ## Autor
 
