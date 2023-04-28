@@ -4,7 +4,7 @@
 
 > _Este projeto foi desenvolvido na **Seção 7 - Gerenciamento de estado com Redux** do **Módulo de Front-end** da **Formação Intensiva [Trybe](https://www.betrybe.com/)**._
 
-- URL do projeto: [https://trybewallet-ec.vercel.app/](https://trybetunes-ec.vercel.app/)
+- URL do projeto: [https://trybewallet-ec.vercel.app/](https://trybewallet-ec.vercel.app/)
 
 ---
 
