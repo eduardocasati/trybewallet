@@ -7,7 +7,7 @@ import '../style/Login.css';
 
 import heroImage from '../assets/hero-image.png';
 import logo from '../assets/logo.png';
-// import tracedUnderline from '../assets/traced-underline.png';
+import tracedUnderline from '../assets/traced-underline.png';
 import { saveUser } from '../redux/actions';
 
 class Login extends React.Component {
@@ -56,10 +56,12 @@ class Login extends React.Component {
         <div className="header header--transparent">
           <div className="header__container">
             <div className="logo">
-              <img src={ logo } alt="Money with wings" className="header--transparent" />
-              <span className="header--transparent">
-                trybewallet
-              </span>
+              <img
+                src={ logo }
+                alt="Money with wings"
+                className="header--transparent"
+              />
+              <span className="header--transparent">trybewallet</span>
             </div>
           </div>
         </div>
@@ -67,16 +69,16 @@ class Login extends React.Component {
           <div className="hero__title">
             <h1>
               <span>
-                Controle
-                {/* <img src={ tracedUnderline } alt="Traced underline" /> */}
+                Gerencie
+                <img src={ tracedUnderline } alt="Traced underline" />
               </span>
               {' '}
-              total das finanças na palma da sua mão
+              suas finanças pessoais de forma inteligente e eficiente
             </h1>
-            <p>
-              Organize seu dinheiro em tempo real em uma solução completa,
-              prática e segura, e garanta o controle total das suas finanças.
-            </p>
+            {/* <p>
+              Gerencie suas finanças de qualquer lugar, a qualquer momento, e
+              tenha mais controle sobre o seu dinheiro.
+            </p> */}
             <div className="login__inputs">
               <input
                 value={ emailInput }

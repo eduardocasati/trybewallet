@@ -1,6 +1,6 @@
-/* .header--transparent {
+.header--transparent {
   background-color: transparent ! important;
-  color: #0a522d ! important;
+  color: #39559e ! important;
   font-size: 1.8rem ! important;
   height: 7rem ! important;
 }
@@ -10,7 +10,7 @@
   height: auto ! important;
   transform: translateY(-7px);
   width: 72px ! important;
-} */
+}
 
 .logo span {
   align-items: center;
@@ -40,14 +40,14 @@
 }
 
 .login__inputs button {
-  filter: drop-shadow(0 21px 20px rgba(20, 163, 91, 0.4));
+  filter: drop-shadow(0 21px 20px rgb(70, 117, 202, 0.4));
   gap: 32px;
   justify-content: space-between;
   position: relative;
 }
 
 .login__inputs button:disabled {
-  background-color: rgba(89, 114, 101, 0.5);
+  background-color: #a5c9eb;
   filter: none;
   pointer-events: none;
 }
@@ -82,7 +82,7 @@
 }
 
 .hero h1 {
-  color: #084023;
+  color: #39559e;
   font-size: 3.75rem;
   letter-spacing: -0.025em;
   line-height: 1;
@@ -91,7 +91,9 @@
 
 .hero h1 span {
   background-clip: text;
-  background-image: linear-gradient(90deg, #229155 0%, #2a6a4b 100%);
+
+  /* background-image: linear-gradient(90deg, #fdc789 0%, #ee4d54 100%); */
+  background-color: #e1395f;
   color: transparent;
   position: relative;
 }

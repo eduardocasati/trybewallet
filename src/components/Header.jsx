@@ -17,7 +17,7 @@ class Header extends Component {
             <img src={ logo } alt="Money with wings" />
             <span>trybewallet</span>
           </div>
-          <span className="header__expenses">
+          {/* <span className="header__expenses">
             Total de Despesas:
             {' '}
             <span className="header__total" data-testid="total-field">
@@ -34,7 +34,7 @@ class Header extends Component {
                 BRL
               </span>
             </span>
-          </span>
+          </span> */}
           <div className="header__info">
             <span className="header__user" data-testid="email-field">
               <HiOutlineUser size={ 18 } />

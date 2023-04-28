@@ -23,11 +23,11 @@
 }
 
 .wallet-form input:focus {
-  border: 2px solid #81ecb6;
+  border: 2px solid #3c62b9;
 }
 
 .wallet-form select:focus {
-  border: 2px solid #81ecb6;
+  border: 2px solid #3c62b9;
 }
 
 .wallet-form--description {
@@ -65,7 +65,7 @@
 
 .wallet-form button {
   align-items: center;
-  background-color: #56caa4;
+  background-color: #5a8fd7;
   border-radius: 6px;
   color: white;
   display: flex;
@@ -78,10 +78,11 @@
 }
 
 .wallet-form button:hover {
-  background-color: #52b796;
+  background-color: #3c62b9;
   color: white;
 }
 
 .wallet-form--is-editing {
-  filter: drop-shadow(0 0 16px rgba(20, 163, 91, 0.4));
+  border: 1px solid #3c62b9;
+  filter: drop-shadow(0 0 16px rgb(57, 85, 158, 0.4));
 }

@@ -33,7 +33,7 @@
 
 .total-expenses h2 {
   align-items: center;
-  color: #05346a;
+  color: #39559e;
   display: flex;
   font-size: 18px;
   font-weight: 700;
@@ -59,6 +59,6 @@
   padding-right: 16px;
 }
 
-/* .total-expenses--red {
-  color: #ff6c6c ! important;
-} */
+.total-expenses--red {
+  color: #e1395f ! important;
+}

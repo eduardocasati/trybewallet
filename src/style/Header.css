@@ -1,6 +1,6 @@
 .header {
   align-items: center;
-  background-color: #1bd273;
+  background-color: #4675ca;
   display: flex;
   height: 3.2rem;
   justify-content: space-between;
@@ -45,7 +45,7 @@
 
 .header__user {
   align-items: center;
-  color: #084023;
+  color: #f2f6fc;
   display: flex;
   gap: 4px;
   opacity: 70%;

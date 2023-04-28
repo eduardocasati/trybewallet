@@ -16,10 +16,10 @@
 }
 
 .table__header {
-  background-color: #14a35b;
+  background-color: #3c62b9;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  color: #d0f6e2;
+  color: #f2f6fc;
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
@@ -77,17 +77,17 @@
 }
 
 .table__button-edit:hover {
-  color: #57d3ff;
+  color: #4675ca;
   transition: 150ms ease-in-out;
 }
 
 .table__button-delete:hover {
-  color: #ec3838;
+  color: #e1395f;
   transition: 150ms ease-in-out;
 }
 
 .table__footer {
-  border-bottom: 5px solid #14a35b;
+  border-bottom: 5px solid #3c62b9;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   height: 5px;

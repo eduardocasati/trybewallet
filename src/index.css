@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Secular+One&display=swap');
 
-:root {
-
-}
-
 *, *::before, *::after {
   padding: 0;
   margin: 0;
@@ -13,7 +9,7 @@
 }
 
 body {
-  background-image: linear-gradient(90deg, white 0%, #E9FCF3 100%);
+  background-image: linear-gradient(90deg, white 0%, #e1ecf8 100%);
   font-family: 'Noto Sans', sans-serif;
   color: #597265;
 }
@@ -23,13 +19,13 @@ input, button, select {
 }
 
 input, select {
-  border: 1px solid rgba(89, 114, 101, 0.5);
+  border: 1px solid rgb(33, 45, 74, 0.5);
   border-radius: 0.5rem;
 }
 
 input {
   padding-left: 16px;
-  color: #597265;
+  color: #304678;
   padding-block: 0.65rem
 }
 
@@ -51,7 +47,7 @@ input , button {
 button {
   border: none;
   cursor: pointer;
-  background-color: #14A35B;
+  background-color: #4675ca;
   font-weight: 600;
   color: white;
   padding: 0.75rem 1.5rem;
@@ -60,7 +56,7 @@ button {
 }
 
 button:hover {
-background-color: #0F7641;
+background-color: #39559e;
 }
 
 select {
