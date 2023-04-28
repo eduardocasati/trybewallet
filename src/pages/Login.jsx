@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-// import { MdLogin } from 'react-icons/md';
 import { connect } from 'react-redux';
 
 import '../style/Login.css';
@@ -75,10 +74,6 @@ class Login extends React.Component {
               {' '}
               suas finanças pessoais de forma inteligente e eficiente
             </h1>
-            {/* <p>
-              Gerencie suas finanças de qualquer lugar, a qualquer momento, e
-              tenha mais controle sobre o seu dinheiro.
-            </p> */}
             <div className="login__inputs">
               <input
                 value={ emailInput }
@@ -104,10 +99,6 @@ class Login extends React.Component {
                 disabled={ validInfo }
               >
                 Entrar
-                {' '}
-                {/* <div className="login-btn__arrow">
-                  <MdLogin size={ 20 } />
-                </div> */}
               </button>
             </div>
           </div>
