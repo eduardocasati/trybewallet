@@ -67,11 +67,17 @@
 @media only screen and ( max-width : 400px ) {
 
   .header {
-    height: 6rem;
+    height: 8rem;
   }
 
   .header__container {
+    flex-direction: column;
+    justify-content: space-evenly;
     padding: 0 16px;
+  }
+
+  .logo span {
+    font-size: 1.6rem;
   }
 
 }

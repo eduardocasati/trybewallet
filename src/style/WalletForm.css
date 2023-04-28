@@ -86,3 +86,25 @@
   border: 1px solid #3c62b9;
   filter: drop-shadow(0 0 16px rgb(57, 85, 158, 0.4));
 }
+
+@media only screen and ( max-width : 400px ) {
+
+  .wallet-form {
+    box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+    margin: 0 auto;
+    width: 88%;
+  }
+
+  .wallet-form__container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .wallet-form--description {
+    width: 100%;
+  }
+
+  .wallet-form__button {
+    margin-top: 16px;
+  }
+}

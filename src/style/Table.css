@@ -103,3 +103,18 @@
 .table__buttons button:hover {
   background-color: transparent;
 }
+
+@media only screen and ( max-width : 400px ) {
+
+  .table {
+    box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+    margin: 0 auto 100px;
+    padding: 20px;
+    width: 88%;
+  }
+
+  .table table {display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}
