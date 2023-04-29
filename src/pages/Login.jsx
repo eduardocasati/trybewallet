@@ -1,20 +1,31 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import React from "react";
+import { connect } from "react-redux";
+import Swal from "sweetalert2";
 
-import '../style/Login.css';
+import "../style/Login.css";
 
-import heroImage from '../assets/hero-image.png';
-import logo from '../assets/logo.png';
-import tracedUnderline from '../assets/traced-underline.png';
-import { saveUser } from '../redux/actions';
+import heroImage from "../assets/hero-image.png";
+import logo from "../assets/logo.png";
+import tracedUnderline from "../assets/traced-underline.png";
+import { saveUser } from "../redux/actions";
 
 class Login extends React.Component {
   state = {
-    emailInput: '',
-    pwdInput: '',
+    emailInput: "",
+    pwdInput: "",
     validInfo: true,
   };
+
+  componentDidMount() {
+    Swal.fire({
+      title: 'Seja bem-vindo(a) ao Trybe Wallet!',
+      text: "Esta é uma aplicação Front-end e, portanto, não há nenhum tipo de coleta ou persistência de dados. Para acessar a carteira basta inserir um email qualquer em um formato válido (ex: usuario@email.com) e uma senha de pelo menos 6 caracteres (ex: 123456).",
+      confirmButtonText: "Fechar",
+      confirmButtonColor: '#39559E',
+      allowOutsideClick: true,
+    });
+  }
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -22,7 +33,7 @@ class Login extends React.Component {
       {
         [name]: value,
       },
-      () => this.validateLogin(),
+      () => this.validateLogin()
     );
   };
 
@@ -45,7 +56,7 @@ class Login extends React.Component {
   handleLogin = (emailInput) => {
     const { dispatch, history } = this.props;
     dispatch(saveUser(emailInput));
-    history.push('/carteira');
+    history.push("/carteira");
   };
 
   render() {
@@ -56,7 +67,7 @@ class Login extends React.Component {
           <div className="header__container">
             <div className="logo">
               <img
-                src={ logo }
+                src={logo}
                 alt="Money with wings"
                 className="header--transparent"
               />
@@ -69,15 +80,14 @@ class Login extends React.Component {
             <h1>
               <span>
                 Gerencie
-                <img src={ tracedUnderline } alt="Traced underline" />
-              </span>
-              {' '}
+                <img src={tracedUnderline} alt="Traced underline" />
+              </span>{" "}
               suas finanças pessoais de forma inteligente e eficiente
             </h1>
             <div className="login__inputs">
               <input
-                value={ emailInput }
-                onChange={ this.handleChange }
+                value={emailInput}
+                onChange={this.handleChange}
                 type="email"
                 name="emailInput"
                 id="emailInput"
@@ -85,8 +95,8 @@ class Login extends React.Component {
                 data-testid="email-input"
               />
               <input
-                value={ pwdInput }
-                onChange={ this.handleChange }
+                value={pwdInput}
+                onChange={this.handleChange}
                 type="password"
                 name="pwdInput"
                 id="pwdInput"
@@ -94,16 +104,16 @@ class Login extends React.Component {
                 data-testid="password-input"
               />
               <button
-                onClick={ () => this.handleLogin(emailInput) }
+                onClick={() => this.handleLogin(emailInput)}
                 type="button"
-                disabled={ validInfo }
+                disabled={validInfo}
               >
                 Entrar
               </button>
             </div>
           </div>
           <div className="hero__image">
-            <img src={ heroImage } alt="Hero" />
+            <img src={heroImage} alt="Hero" />
           </div>
         </div>
       </div>
