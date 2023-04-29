@@ -24,6 +24,9 @@ class Login extends React.Component {
       confirmButtonText: "Fechar",
       confirmButtonColor: '#39559E',
       allowOutsideClick: true,
+      customClass: {
+        title: 'custom-swall-title',
+      },
     });
   }
 

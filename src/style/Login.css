@@ -101,6 +101,10 @@
   width: 50%;
 }
 
+.custom-swall-title {
+  color: #39559e;
+}
+
 @media only screen and ( max-width : 1200px ) {
 
   .hero {
