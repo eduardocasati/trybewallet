@@ -1,25 +1,33 @@
 # 💰 Trybe Wallet
 
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" />
+![React Badge](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=000) ![Redux Badge](https://img.shields.io/badge/redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 
-> _Este projeto foi desenvolvido na **Seção 7 - Gerenciamento de estado com Redux** do **Módulo de Front-end** da **Formação Intensiva [Trybe](https://www.betrybe.com/)**._
+> _Este projeto foi desenvolvido como parte da **[Formação em Desenvolvimento Web](https://www.betrybe.com/formacao-desenvolvimento-web)** pela **[Trybe](https://www.betrybe.com/)**, no **Módulo: Front-end**, **Seção 7 - Gerenciamento de estado com Redux**_
 
-- URL do projeto: [https://trybewallet-ec.vercel.app/](https://trybewallet-ec.vercel.app/)
+> Live demo do projeto: [https://trybewallet-ec.vercel.app/](https://trybewallet-ec.vercel.app/)
+
+#### Autor: **Eduardo Casati**
+
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eduardocasati/)
 
 ---
 
+## O que foi Desenvolvido
+
+O projeto consiste em uma carteira de controle de gastos com conversor de moedas.
+
+**Funcionalidades:**
+
+- Adicionar, remover e editar um gasto;
+- Visualizar uma tabelas com seus gastos;
+- Visualizar o total de gastos convertidos para uma moeda de escolha;
+
 ## O que foi avaliado
 
-Este projeto foi desenvolvido para o estudo e a avaliação dos seguintes conhecimentos:
+Este projeto teve como objetivo consolidar e avaliar conhecimentos dos seguintes tópicos:
 
-- Gerenciamento de estado com Redux
+- Gerenciamento de estado global com Redux
 - Ciclos de vida de componentes React;
 - Manipulação do Estado de componentes React;
 - Renderização condicional;
-- Requisição e consumo de dados vindos de uma API ([API de Cotações](https://docs.awesomeapi.com.br/api-de-moedas));
-
-## Autor
-
-**Eduardo Casati**
-
-[<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">](https://www.linkedin.com/in/eduardo-casati/)
+- Requisição e consumo de dados de uma API ([API de Cotações](https://docs.awesomeapi.com.br/api-de-moedas));
